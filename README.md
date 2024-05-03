@@ -1,2 +1,3 @@
 # clone-tabnews
-Repositorio utilizado para aprender programação - Curso.dev
+
+Repositório utilizado para aprender programação - Curso.dev
