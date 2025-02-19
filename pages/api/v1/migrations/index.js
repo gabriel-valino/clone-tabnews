@@ -13,6 +13,11 @@ export default async function migrations(req, res) {
     migrationsTable: "pgmigrations",
   };
 
+  if (req.method !== "GET" && req.method !== "POST") {
+    await dbClient.end();
+    res.status(405).json({ error: "Método não permitido" });
+  }
+
   if (req.method === "GET") {
     const pendingMigrations = await migrationsRunner(defaultMigrationOptions);
     await dbClient.end();
